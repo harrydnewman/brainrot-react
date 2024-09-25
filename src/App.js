@@ -5,7 +5,6 @@ import Home from './pages/Home';
 // import Animation from './pages/Animation';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import ScrollAnimation from './pages/ScrollAnimation';
 import SingleVideo from './pages/SingleVideo';
 
 function App() {
@@ -16,8 +15,7 @@ function App() {
          <Route path='/' element={<Home/>} />
          <Route path='/about' element={<About/>} />
          <Route path='/contact' element={<Contact/>} />
-         {/* <Route path='/animation' element={<Animation/>} /> */}
-         <Route path='/custom' element={<ScrollAnimation/>}/>
+         
          <Route path='/single' element={<SingleVideo/>}/>
        </Routes>
      </div>
