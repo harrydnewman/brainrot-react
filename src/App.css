@@ -53,7 +53,7 @@ a:hover {
 }
 
 .homepageOverlay {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -61,6 +61,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     z-index: 1; /* Ensure it stays on top of other content */
+    pointer-events: none;
 }
 .homepageOverlay h1 {
     display: flex;

@@ -111,88 +111,51 @@
   }
 } 
 
-// .homePageOverlay {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100vh;
-//   display: flex;
-//   flex-direction: column;
-//   z-index: 1;
-// }
-
-// .homepageOverlay h1 {
-//   display: flex;
-//   /* width: 100%; */
-//   /* color: green; */
-//   justify-content: center;
-//   align-items: center;
-//   /* background-color: purple; */
-// }
-
-// .homePageScrollArrow {
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-//   justify-content: flex-end;
-// }
-
-
-// .titleText {
-//   font-size: 60px;
-//   padding-top: 40vh;
-// }
-
-// .upArrowIcon {
-//   font-size: 60px;
-//   padding-bottom: 0;
-// } 
-
-// .scrollUpText {
-//   padding: 0;
-//   margin: 0;
-//   font-size: 40px;
-//   text-align: center;
-// }
-
 .homePageOverlay {
-  position: fixed;  /* Keep the overlay fixed in the viewport */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100vh;
+  width: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Center the overlay content vertically */
-  align-items: center;      /* Center the overlay content horizontally */
-  z-index: 1;               /* Ensure it stays above other content */
+  z-index: 1;
+}
+
+.homepageOverlay h1 {
+  display: flex;
+  /* width: 100%; */
+  /* color: green; */
+  justify-content: center;
+  align-items: center;
+  /* background-color: purple; */
 }
 
 .homePageScrollArrow {
   display: flex;
   flex-direction: column;
-  justify-content: center;  /* Center the scroll arrow */
-  align-items: center;      /* Center the text below it */
-  height: auto;             /* Allow height to adjust based on content */
+  height: 100%;
+  justify-content: flex-end;
 }
+
 
 .titleText {
   font-size: 60px;
-  color: white;             /* Change text color for better contrast */
+  padding-top: 40vh;
 }
 
 .upArrowIcon {
   font-size: 60px;
-  margin: 0;               /* Remove any default margins */
+  padding-bottom: 0;
 } 
 
 .scrollUpText {
-  margin: 0;               /* Remove margin to avoid spacing issues */
+  padding: 0;
+  margin: 0;
   font-size: 40px;
   text-align: center;
-  color: white;            /* Change text color for better contrast */
 }
+
 
 @media (max-width: 1400px) {
   .outerSquare {
