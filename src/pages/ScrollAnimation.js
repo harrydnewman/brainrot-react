@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useScroll } from '@react-spring/web';
 import styles from '../styles/rectangleScroll.module.scss';
 import InnerSquareAnimation from '../components/InnerSquareAnimation'; // Import the new component
+import { FaArrowUp } from "react-icons/fa";
 
 const X_LINES = 40;
 const PAGE_COUNT = 3;
@@ -9,6 +10,8 @@ const SQUARE_COUNT = 50;
 
 export default function Animation() {
   const [innerSquareColor, setInnerSquareColor] = React.useState("green");
+
+  // load next page
 
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
@@ -18,6 +21,12 @@ export default function Animation() {
       if (scrollYProgress === 1) {
         console.log("Scroll value is 1");
         setInnerSquareColor("gray");
+
+        //start animation here 
+
+        setTimer(setTimeout(() => {
+          // load next page
+        }, 1000));
         // wait like 1 second and then load main page or something
       }
       if (innerSquareColor == "gray" && scrollYProgress < 1) {
@@ -80,7 +89,7 @@ export default function Animation() {
       <div className={styles.squareContainer}>
         <div className={styles.squareFlexContainer}>
           {Array.from({ length: SQUARE_COUNT }).map((_, index) => (
-            <InnerSquareAnimation key={index} scrollYProgress={scrollYProgress} color={innerSquareColor}/>
+            <InnerSquareAnimation key={index} scrollYProgress={scrollYProgress} color={innerSquareColor} />
           ))}
         </div>
       </div>
@@ -90,6 +99,18 @@ export default function Animation() {
       <button className={styles.scrollResetButton} onClick={() => resetScroll(scrollYProgress.get())}>
         Reset Scroll
       </button>
+
+      <div className='homepageOverlay'>
+        <h1 className='titleText'>Brainrot Archive</h1>
+        <div className="homePageScrollArrow">
+          <h1 className="upArrowIcon">
+            <FaArrowUp />
+          </h1>
+          <div className="homePageScrollArrowText">
+            <h1 className="scrollUpText">Scroll Up To View The Archive</h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

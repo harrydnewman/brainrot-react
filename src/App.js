@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import ScrollAnimation from './pages/ScrollAnimation';
+import SingleVideo from './pages/SingleVideo';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
          <Route path='/contact' element={<Contact/>} />
          {/* <Route path='/animation' element={<Animation/>} /> */}
          <Route path='/custom' element={<ScrollAnimation/>}/>
+         <Route path='/single' element={<SingleVideo/>}/>
        </Routes>
      </div>
     </div>
