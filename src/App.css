@@ -93,7 +93,7 @@ a:hover {
 .scrollUpText {
     padding: 0;
     margin: 0;
-    font-size: 40px;
+    font-size: 60px;
     text-align: center;
 }
 
@@ -140,11 +140,17 @@ a:hover {
   .gifHolder {
       width: 15%; /* Adjust to 4 boxes per row for smaller screens */
   }
+  .scrollUpText {
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 770px) {
   .gifHolder {
       width: 18%; /* Adjust to 4 boxes per row for smaller screens */
+  }
+  .scrollUpText {
+    font-size: 45px;
   }
 }
 
@@ -152,17 +158,26 @@ a:hover {
   .gifHolder {
       width: 20%; /* Adjust to 3 boxes per row for smaller screens */
   }
+  .scrollUpText {
+    font-size: 37px;
+  }
 }
 
 @media (max-width: 510px) {
   .gifHolder {
       width: 24%; /* Adjust to 3 boxes per row for smaller screens */
   }
+  .scrollUpText {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 400px) {
   .gifHolder {
       width: 50%; /* Adjust to 2 boxes per row for very small screens */
+  }
+  .scrollUpText {
+    font-size: 25px;
   }
 }
 

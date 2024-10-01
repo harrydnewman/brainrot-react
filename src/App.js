@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import SingleVideo from './pages/SingleVideo';
+import Scroll from './pages/Scroll';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
          <Route path='/contact' element={<Contact/>} />
          
          <Route path='/single' element={<SingleVideo/>}/>
+         <Route path='/scroll' element={<Scroll/>}/>
        </Routes>
      </div>
     </div>
