@@ -3,6 +3,7 @@ import { useScroll } from '@react-spring/web';
 import styles from '../styles/rectangleScroll.module.scss';
 import InnerSquareAnimation from '../components/InnerSquareAnimation';
 import { FaArrowUp } from "react-icons/fa";
+import LazyLoad from 'react-lazyload';
 
 const X_LINES = 40;
 const PAGE_COUNT = 3;
