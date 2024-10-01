@@ -3,7 +3,7 @@ import { useScroll } from '@react-spring/web';
 import styles from '../styles/rectangleScroll.module.scss';
 import InnerSquareAnimation from '../components/InnerSquareAnimation';
 import { FaArrowUp } from "react-icons/fa";
-import RedirectTo from '../components/RedirectTo';
+import { useNavigate } from 'react-router-dom';
 
 const PAGE_COUNT = 3;
 const SQUARE_COUNT = 50;
@@ -12,18 +12,26 @@ export default function Home() {
   const [innerSquareColor, setInnerSquareColor] = React.useState("rgb(160, 160, 160, 0.386)");
   const [timer, setTimer] = React.useState(null);
   const [images, setImages] = React.useState([]); // Store images from API
+  const [shouldRedirect, setShouldRedirect] = React.useState(false); // State to trigger redirect
   const containerRef = React.useRef(null);
-  const targetPage = '/';
+  const navigate = useNavigate(); // Get the navigate function from react-router
+  const targetPage = '/scroll';
+
   const { scrollYProgress } = useScroll({
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
       if (scrollYProgress === 1) {
         setInnerSquareColor("gray");
+        // Set timer to redirect after 1 second
         setTimer(setTimeout(() => {
           console.log("Running load next page");
-        }, 1000));
+          setShouldRedirect(true); // Trigger redirect
+        }, 1500));
       } else {
-        setInnerSquareColor(prevColor => prevColor === "gray" && scrollYProgress !== 1 ? "rgb(160, 160, 160, 0.386)" : prevColor);
+        setInnerSquareColor(prevColor => prevColor === "gray" && scrollYProgress !== 1 
+          ? "rgb(160, 160, 160, 0.386)" 
+          : prevColor
+        );
       }
     },
   });
@@ -33,7 +41,7 @@ export default function Home() {
     try {
       const response = await fetch("http://localhost:6001/api/gifs");
       const gifUrls = await response.json();
-      console.log("gifUrls:", gifUrls)
+      console.log("gifUrls:", gifUrls);
       setImages(gifUrls); // Set the fetched GIF URLs to state
     } catch (error) {
       console.error("Error fetching GIFs:", error);
@@ -45,8 +53,15 @@ export default function Home() {
     fetchGifs();
   }, []);
 
-  const resetScroll = (scrollYProgress) => {
-    if (scrollYProgress === 1) return;
+  // Handle redirecting when shouldRedirect changes
+  React.useEffect(() => {
+    if (shouldRedirect) {
+      console.log("Should redirect triggered")
+      navigate(targetPage); // Use navigate to go to the new page
+    }
+  }, [shouldRedirect, navigate, targetPage]); 
+
+  const resetScroll = () => {
     if (containerRef.current) {
       containerRef.current.scrollTo({
         top: 0,
@@ -57,8 +72,9 @@ export default function Home() {
 
   const handleScroll = () => {
     if (timer) clearTimeout(timer);
+    // Set timer to reset scroll after 1 second of inactivity
     setTimer(setTimeout(() => {
-      resetScroll(scrollYProgress.get());
+      resetScroll();
     }, 1000));
   };
 
@@ -92,7 +108,7 @@ export default function Home() {
       ))}
 
       <div className='homepageOverlay'>
-      <h1 className={styles.titleText}>Brainrot Archive</h1>
+        <h1 className={styles.titleText}>Brainrot Archive</h1>
         <div className="homePageScrollArrow">
           <h1 className={styles.upArrowIcon}>
             <FaArrowUp />
