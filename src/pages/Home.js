@@ -40,6 +40,7 @@ export default function Home() {
   const fetchGifs = async () => {
     try {
       const response = await fetch("http://46.101.219.105:6001/api/gifs");
+      // const response = await fetch("http://localhost:6001/api/gifs");
       const gifUrls = await response.json();
       console.log("gifUrls:", gifUrls);
       setImages(gifUrls); // Set the fetched GIF URLs to state
