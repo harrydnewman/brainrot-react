@@ -39,5 +39,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .dockerignore
-docker-compose.yml
 Dockerfile
+docker-compose.yml
