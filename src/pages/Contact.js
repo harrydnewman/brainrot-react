@@ -10,5 +10,5 @@ const Contact = () => {
     </div>
   )
 }
-// hi
+
 export default Contact
