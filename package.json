@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@use-gesture/react": "^10.3.1",
     "bootstrap": "^5.3.3",
+    "express": "^4.21.0",
+    "nodemon": "^3.1.7",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",

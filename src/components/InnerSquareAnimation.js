@@ -11,14 +11,17 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
     backgroundColor: color,
   });
 
+  // Use the placeholder image if the image URL is invalid or empty
+  const backgroundImage = image && image.length > 0 ? `url(${image})` : `url('/blacksquare.webp')`;
+
   return (
     <div
       className={styles.outerSquare}
       ref={ref}
       style={{
-        backgroundImage: `url(${image})`, // Check if image URL is valid
-        backgroundSize: 'cover', // Ensure the image covers the entire square
-        backgroundPosition: 'center', // Center the image
+        backgroundImage: backgroundImage,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
       <animated.div
@@ -28,5 +31,6 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
     </div>
   );
 });
+
 
 export default InnerSquareAnimation;

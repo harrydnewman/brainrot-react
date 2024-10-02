@@ -39,7 +39,7 @@ export default function Home() {
   // Function to fetch GIFs from API
   const fetchGifs = async () => {
     try {
-      const response = await fetch("http://localhost:6001/api/gifs");
+      const response = await fetch("http://46.101.219.105:6001/api/gifs");
       const gifUrls = await response.json();
       console.log("gifUrls:", gifUrls);
       setImages(gifUrls); // Set the fetched GIF URLs to state
@@ -56,7 +56,7 @@ export default function Home() {
   // Handle redirecting when shouldRedirect changes
   React.useEffect(() => {
     if (shouldRedirect) {
-      console.log("Should redirect triggered")
+      console.log("Should redirect triggered");
       navigate(targetPage); // Use navigate to go to the new page
     }
   }, [shouldRedirect, navigate, targetPage]); 
@@ -70,13 +70,14 @@ export default function Home() {
     }
   };
 
-  const handleScroll = () => {
+  // Memoize handleScroll using useCallback
+  const handleScroll = React.useCallback(() => {
     if (timer) clearTimeout(timer);
     // Set timer to reset scroll after 1 second of inactivity
     setTimer(setTimeout(() => {
       resetScroll();
     }, 1000));
-  };
+  }, [timer]); // Add timer to dependencies
 
   React.useEffect(() => {
     const container = containerRef.current;
@@ -87,7 +88,7 @@ export default function Home() {
         if (timer) clearTimeout(timer);
       };
     }
-  }, [timer]);
+  }, [handleScroll, timer]); // Include handleScroll in the dependency array
 
   return (
     <div ref={containerRef} className={styles.body}>
