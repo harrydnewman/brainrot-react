@@ -5,6 +5,12 @@ import styles from '../styles/rectangleScroll.module.scss';
 const InnerSquareAnimation = React.forwardRef((props, ref) => {
   const { scrollYProgress, color, image } = props;
 
+  console.log('Image URL:', image);
+
+  const imageUrl = "46.101.219.105:6001" + image
+
+  console.log(imageUrl)
+
   // Animate height based on scroll progress
   const innerSquareStyle = useSpring({
     height: scrollYProgress.to((val) => `${val * 100}%`),
@@ -12,7 +18,7 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
   });
 
   // Use the placeholder image if the image URL is invalid or empty
-  const backgroundImage = image && image.length > 0 ? `url(${image})` : `url('/blacksquare.webp')`;
+  const backgroundImage = image && image.length > 0 ? `url(${imageUrl})` : `url('/blacksquare.webp')`;
 
   return (
     <div
