@@ -6,6 +6,7 @@
     background-color: blue;
     display: flex;
     flex-direction: row;
+    padding: 5px;
 }
 
 .leftFlex {
@@ -48,11 +49,29 @@
 }
 
 .mobileRightScrollContainer {
-    height: 32vh;
+    height: 35vh;
 }
 
 
 
 .mobileSourceScrollContainer {
-    height: 8vh;
+    height: 5vh;
 }
+
+@media screen and (max-width: 700px) {
+    .leftFlex {
+        width: 50%;
+    }
+    .rightFlex {
+        width: 50%;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .leftFlex {
+        width: 55%;
+    }
+    .rightFlex {
+        width: 45%;
+    }
+  }

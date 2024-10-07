@@ -1,0 +1,18 @@
+.playerDiv {
+    height: 100%;
+    width: 100%;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.videoPlayer {
+    background-color: brown;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    
+}

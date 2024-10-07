@@ -17,14 +17,14 @@ const Scroll = () => {
         width: window.innerWidth,
         height: window.innerHeight,
       });
-      console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
+      // console.log(`Width: ${window.innerWidth}, Height: ${window.innerHeight}`);
     };
 
     // Add event listener to resize event
     window.addEventListener('resize', handleResize);
 
     // Log initial screen size
-    console.log(`Initial Width: ${window.innerWidth}, Initial Height: ${window.innerHeight}`);
+    // console.log(`Initial Width: ${window.innerWidth}, Initial Height: ${window.innerHeight}`);
 
     // Cleanup function to remove event listener on unmount
     return () => {
@@ -33,7 +33,8 @@ const Scroll = () => {
   }, []);
 
   // Use the tracked windowSize for conditional rendering
-  if (windowSize.width < 500) {
+  // if (windowSize.width < 500) {
+    if (windowSize.width < 625) {
     return (
       <div className={styles.mobileScrollContainer}>
         <div className={styles.mobileLeftScrollContainer}>
