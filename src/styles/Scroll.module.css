@@ -1,4 +1,58 @@
-.scrollContainer {
+
+
+.flexScrollContainer {
     width: 100%;
+    height: 100vh;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftFlex {
+    width: 45%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.rightFlex {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.leftScrollContainer {
+    height: 80%;
+
+}
+
+.sourceScrollContainer {
+    height: 10%;
+}
+
+.rightScrollContainer {
+    height: 70%;
+}
+
+
+
+.mobileScrollContainer {
+    width: 100%;
+    height: 100vh;
 } 
+
+.mobileLeftScrollContainer {
+    height: 60vh;
+}
+
+.mobileRightScrollContainer {
+    height: 32vh;
+}
+
+
+
+.mobileSourceScrollContainer {
+    height: 8vh;
+}
