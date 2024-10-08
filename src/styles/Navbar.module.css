@@ -20,20 +20,21 @@
 }
 
 .leftBorder {
-    border-width: 0 0 0 1px;
+    /* border-width: 0 0 0 1px;
     border-style:  solid ;
     border-color: black;
-    height: 80%;
+    height: 80%; */
 }
 
 .rightBorder {
-    border-width: 0 1px 0 0;
+    /* border-width: 0 1px 0 0;
     border-style:  solid ;
     border-color: black;
-    height: 80%;
+    height: 80%; */
 }
 
 .typeButtonDrawer {
+    position: relative;
     height: 75%;
     width: 90%;
     background-color: rgb(234, 234, 234);
@@ -47,29 +48,38 @@
 
 /* this is more like the actual selection */
 .drawerSection {
+    position: relative;
     height:100%;
     width: 50%;
     /* border-radius: 15px; */
+    z-index: 1;
 }
 
 .drawerSection button {
+    position: relative;
     width: 100%;
     height: 100%;
     /* background-color: rgba(255, 255, 255, 0); */
-    /* border-width: 0 0 0 0; */
+    border-width: 0 0 0 0;
     border-radius: 15px;
+    z-index: 2;
 }
 
 .drawerSection button:hover {
     cursor: pointer;
 }
 .drawerSectionSelected { 
-    background-color: rgb(215, 215, 215);
-    height:100%;
-    width: 53%;
-    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    background-color: rgba(215, 215, 215, 0.216);
+    border-radius: 10px;
     border: 2px solid black;
-}
+    z-index: 3; /* Ensure it stays behind the buttons */
+    /* margin: 5px; */
+  }
 
 .aboutLinkHolder {
     width: 45%;
@@ -95,9 +105,19 @@
     width: 60%;
     height: 75%;
     margin: 10px;
-    border: 3px solid black;
+    /* border: 3px solid black; */
     border-radius: 15px;
-    /* display: flex;
-    align-items: flex-end; */
+    background-color: rgb(234, 234, 234);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+    /* align-items: flex-end; */ 
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
 
+}
+
+.aboutButtonLink h3, p {
+    margin: 0;
+    padding: 0;
 }
