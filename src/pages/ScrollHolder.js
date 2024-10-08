@@ -2,8 +2,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useScroll } from '@react-spring/web';
 import styles from '../styles/ScrollTesting.module.css';
-// import Scroll from './Scroll';
-import SquareForTesting from '../components/SquareForTesting';
 import Scroll from './Scroll';
 import fetchIndividualVideo from '../api/fetchIndividualVideo';
 
@@ -19,6 +17,7 @@ export default function ScrollHolder() {
     console.log("fetching new video")
     const data = await fetchIndividualVideo();
     setVideoData(data);
+    hardResetScroll();
 };
 
 useEffect(() => {
@@ -48,6 +47,15 @@ useEffect(() => {
         behavior: 'smooth',
       });
     }
+  };
+
+  const hardResetScroll = () => {
+      if (containerRef.current) {
+        containerRef.current.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }
   };
 
   const handleScroll = React.useCallback(() => {
@@ -87,7 +95,6 @@ useEffect(() => {
       ))}
       <div className={styles.overlay}>
         <Scroll scrollYProgress={scrollYProgress} videoData={videoData}/>
-        {/* <SquareForTesting scrollYProgress={scrollYProgress}/> */}
       </div>
     </div>
   );
