@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Scroll.module.css';
-import LeftScroll from '../components/LeftScroll';
 import RightScroll from '../components/RightScroll';
 import ScrollSource from '../components/ScrollSource';
 
-import SquareForTesting from '../components/SquareForTesting';
+import VideoPlayer from '../components/VideoPlayer';
 
 const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
     
@@ -47,7 +46,7 @@ const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
             <div className={styles.mobileScrollContainer}>
                 <div className={styles.mobileLeftScrollContainer}>
                 {/* <LeftScroll videoData={videoData}/> */}
-                <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData}/>
+                <VideoPlayer scrollYProgress={scrollYProgress} videoData={videoData}/>
                 </div>
                 <div className={styles.mobileRightScrollContainer}>
                     <RightScroll videoData={videoData} />
@@ -63,7 +62,7 @@ const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
                 <div className={styles.leftFlex}>
                     <div className={styles.leftScrollContainer}>
                         {/* <LeftScroll videoData={videoData}/> */}
-                        <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData} onVideoEnd={onVideoEnd}/>
+                        <VideoPlayer scrollYProgress={scrollYProgress} videoData={videoData} onVideoEnd={onVideoEnd}/>
                         {/* <SquareForTesting scrollYProgress={scrollYProgress}/> */}
                     </div>
                     <div className={styles.sourceScrollContainer}>

@@ -44,7 +44,7 @@ useEffect(() => {
   const { scrollYProgress } = useScroll({
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log("scrollyprogress: ", scrollYProgress);
+      // console.log("scrollyprogress: ", scrollYProgress);
       if (scrollYProgress === 1) {
         console.log("scrollyprogress = 1");
         setTimer(setTimeout(() => {

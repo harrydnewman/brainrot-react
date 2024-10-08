@@ -1,4 +1,20 @@
-.playerDiv {
+/* SquareForTesting.module.css */
+.outerSquare {
+    position: relative;
+    /* background-color: mediumpurple;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden; */
+    background-color: black;
+    border: 3px solid black;
+    border-radius: 15px;
+    display: flex;
+    overflow: hidden;
+    pointer-events: auto;
+  }
+
+  .playerDiv {
     height: 100%;
     width: 100%;
     background-color: blanchedalmond;
@@ -7,12 +23,19 @@
     justify-content: flex-end;
     align-items: center;
 }
+  
+  .innerSquare {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* width: 100%; */
+    height: 0px; /* Start at 0 pixels */
+    /* background-color: blue; */
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 
-.videoPlayer {
-    background-color: brown;
-    border: 3px solid black;
-    border-radius: 15px;
-    display: flex;
-    overflow: hidden;
-    pointer-events: auto;
-}
+  .outerSquare video {
+    width: 100%;
+  }
+  
