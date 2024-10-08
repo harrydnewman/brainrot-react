@@ -1,6 +1,103 @@
 .navbarDiv {
-    width: 35%;
-    height: 18%;
+    /* width: 40vw; */
+    width: 800px;
+    aspect-ratio: 4 / 0.75; 
     /* background-color: brown; */
     border: 1px solid black;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.scrollTypeButtons {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+   
+}
+
+.leftBorder {
+    border-width: 0 0 0 1px;
+    border-style:  solid ;
+    border-color: black;
+    height: 80%;
+}
+
+.rightBorder {
+    border-width: 0 1px 0 0;
+    border-style:  solid ;
+    border-color: black;
+    height: 80%;
+}
+
+.typeButtonDrawer {
+    height: 75%;
+    width: 90%;
+    background-color: rgb(234, 234, 234);
+    /* border: 3px solid black; */
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: row;
+}
+
+/* this is more like the actual selection */
+.drawerSection {
+    height:100%;
+    width: 50%;
+    /* border-radius: 15px; */
+}
+
+.drawerSection button {
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(255, 255, 255, 0); */
+    /* border-width: 0 0 0 0; */
+    border-radius: 15px;
+}
+
+.drawerSection button:hover {
+    cursor: pointer;
+}
+.drawerSectionSelected { 
+    background-color: rgb(215, 215, 215);
+    height:100%;
+    width: 53%;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.aboutLinkHolder {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.typeButton {
+    border: 3px solid black;
+    border-radius: 15px;
+    /* overflow: hidden; */
+    /* background-color: purple; */
+    width: 41%;
+    height: 75%;
+    /* padding: 10px; */
+     margin: 10px;
+}
+
+.aboutButtonLink {
+    width: 60%;
+    height: 75%;
+    margin: 10px;
+    border: 3px solid black;
+    border-radius: 15px;
+    /* display: flex;
+    align-items: flex-end; */
+
 }
