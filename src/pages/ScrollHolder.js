@@ -29,7 +29,7 @@ useEffect(() => {
   const { scrollYProgress } = useScroll({
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
-      console.log("scrollyprogress: ", scrollYProgress);
+      // console.log("scrollyprogress: ", scrollYProgress);
       if (scrollYProgress === 1) {
         console.log("scrollyprogress = 1");
         setTimer(setTimeout(() => {
@@ -64,7 +64,7 @@ useEffect(() => {
       const scrollHeight = containerRef.current.scrollHeight;
       const clientHeight = containerRef.current.clientHeight;
       const scrollProgress = scrollTop / (scrollHeight - clientHeight);
-      console.log("Scroll Progress:", scrollProgress);
+      // console.log("Scroll Progress:", scrollProgress);
     }
     if (timer) clearTimeout(timer);
     setTimer(setTimeout(() => {
