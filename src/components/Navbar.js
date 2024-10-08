@@ -2,7 +2,7 @@ import { useSpring, animated } from 'react-spring';
 import React, { useState, useRef, useLayoutEffect } from 'react';
 import styles from '../styles/Navbar.module.css';
 
-const Navbar = () => {
+const Navbar = ({ onSelectionChange }) => {
   const [selectedButton, setSelectedButton] = useState('scroll');
 
   const scrollButtonRef = useRef(null);
@@ -59,14 +59,23 @@ const Navbar = () => {
 
   function selectScroll() {
     setSelectedButton('scroll');
+    if (onSelectionChange) {
+      onSelectionChange('scroll');
+    }
   }
 
   function selectGrid() {
     setSelectedButton('grid');
+    if (onSelectionChange) {
+      onSelectionChange('grid');
+    }
   }
 
   function selectConfused() {
     setSelectedButton('confused');
+    if (onSelectionChange) {
+      onSelectionChange('confused');
+    }
   }
 
   return (
@@ -105,7 +114,7 @@ const Navbar = () => {
             onClick={selectConfused}
             ref={confusedButtonRef}
           >
-            <h3>Confused?</h3>
+            <h4>Confused?</h4>
             <p>Click Here</p>
           </div>
         </div>

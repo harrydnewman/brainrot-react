@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import SingleVideo from './pages/SingleVideo';
 import ScrollHolder from './pages/ScrollHolder';
 import NavbarTesting from './pages/NavbarTesting';
+import Controller from './pages/Controller';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
          {/* <Route path='/scroll' element={<Scroll/>}/> */}
          <Route path='/scroll' element={<ScrollHolder/>}/>
          <Route path='/navbarTesting' element={<NavbarTesting/>}/>
+         <Route path='/controller' element={<Controller/>}/>
        </Routes>
      </div>
     </div>
