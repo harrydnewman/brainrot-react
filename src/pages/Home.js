@@ -15,7 +15,7 @@ export default function Home() {
   const [shouldRedirect, setShouldRedirect] = React.useState(false); // State to trigger redirect
   const containerRef = React.useRef(null);
   const navigate = useNavigate(); // Get the navigate function from react-router
-  const targetPage = '/scroll';
+  const targetPage = '/controller';
 
   const { scrollYProgress } = useScroll({
     container: containerRef,
@@ -109,14 +109,14 @@ export default function Home() {
         <div className={styles.full__page} key={index} />
       ))}
 
-      <div className='homepageOverlay'>
+      <div className={styles.homePageOverlay}>
         <h1 className={styles.titleText}>Brainrot Archive</h1>
-        <div className="homePageScrollArrow">
+        <div className={styles.homePageScrollArrow}>
           <h1 className={styles.upArrowIcon}>
             <FaArrowUp />
           </h1>
           <div className={styles.scrollUpText}>
-            <h1 className="scrollUpText">Scroll Up To View The Archive</h1>
+            <h1 className={styles.scrollUpText}>Scroll Up To View The Archive</h1>
           </div>
         </div>
       </div>

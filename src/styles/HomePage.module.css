@@ -1,0 +1,139 @@
+.homePageContainer {
+    height: 100vh;
+}
+
+.homePage {
+  height: 100vh; /* Constrain the homepage height to viewport height */
+  overflow-y: auto; /* Allow vertical scrolling for overflowing content */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.homepageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Ensure it stays on top of other content */
+    pointer-events: none;
+}
+
+.homepageOverlay h1 {
+    display: flex;
+    /* width: 100%; */
+    /* color: green; */
+    justify-content: center;
+    align-items: center;
+    /* background-color: purple; */
+}
+
+.homePageScrollArrow {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+}
+
+.titleText {
+    font-size: 60px;
+    padding-top: 40vh;
+}
+
+.upArrowIcon {
+    font-size: 60px;
+    padding-bottom: 0;
+}
+
+.scrollUpText {
+    padding: 0;
+    margin: 0;
+    font-size: 60px;
+    text-align: center;
+}
+
+.homePageGifs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Align the boxes in the center */
+    overflow: hidden; 
+    height: 100vh; /* Limit the height to the viewport height */
+    width: 100%;
+}
+
+.gifHolder {
+    background-color: rgb(216, 216, 116);
+    border: 3px solid rgb(255, 0, 0);
+    aspect-ratio: 9 / 16; 
+    width: 9%; 
+    height: auto; 
+    margin: 0; 
+    flex: 1 0 auto; 
+}
+
+/* Media Queries */
+@media (max-width: 1400px) {
+  .gifHolder {
+      width: 10%; /* Adjust to 5 boxes per row for smaller screens */
+  }
+}
+
+@media (max-width: 1155px) {
+  .gifHolder {
+      width: 11%; /* Adjust to 5 boxes per row for smaller screens */
+  }
+}
+
+@media (max-width: 1030px) {
+  .gifHolder {
+      width: 12%; /* Adjust to 5 boxes per row for smaller screens */
+  }
+}
+
+@media (max-width: 900px) {
+  .gifHolder {
+      width: 15%; /* Adjust to 4 boxes per row for smaller screens */
+  }
+  .scrollUpText {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 770px) {
+  .gifHolder {
+      width: 18%; /* Adjust to 4 boxes per row for smaller screens */
+  }
+  .scrollUpText {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gifHolder {
+      width: 20%; /* Adjust to 3 boxes per row for smaller screens */
+  }
+  .scrollUpText {
+    font-size: 37px;
+  }
+}
+
+@media (max-width: 510px) {
+  .gifHolder {
+      width: 24%; /* Adjust to 3 boxes per row for smaller screens */
+  }
+  .scrollUpText {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gifHolder {
+      width: 50%; /* Adjust to 2 boxes per row for very small screens */
+  }
+  .scrollUpText {
+    font-size: 25px;
+  }
+}

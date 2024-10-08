@@ -141,10 +141,11 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vh;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  pointer-events: none;
   z-index: 1;
 }
 
@@ -163,7 +164,7 @@
 
 .titleText {
   font-size: 60px;
-  padding-top: 40vh;
+  padding-top: 35vh;
   text-shadow: 10px 10px 10px rgb(255, 255, 255);
   color: rgb(238, 0, 255) !important;
   font-size: 100px;
@@ -178,17 +179,19 @@
 }
 
 .upArrowIcon {
-  font-size: 60px;
-  padding-bottom: 0;
   text-shadow: 10px 10px 10px rgb(255, 255, 255);
   color: rgb(238, 0, 255) !important;
-  font-size: 60px;
+  font-size: 70px;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  display: flex;
 }
 
 .scrollUpText {
   padding: 0;
   margin: 0;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
   text-shadow: 10px 10px 10px rgb(255, 255, 255);
   color: rgb(238, 0, 255) !important;

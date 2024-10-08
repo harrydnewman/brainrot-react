@@ -1,7 +1,7 @@
 .playerDiv {
     height: 100%;
     width: 100%;
-    background-color: blanchedalmond;
+    /* background-color: blanchedalmond; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

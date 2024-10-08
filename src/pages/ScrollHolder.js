@@ -101,7 +101,7 @@ useEffect(() => {
   return (
     <div ref={containerRef} className={styles.body} style={{ height: '100vh', overflowY: 'auto' }}>
       <div className={styles.squareContainer}>
-        <p>Hello World</p>
+        {/* <p>Hello World</p> */}
       </div>
       {new Array(PAGE_COUNT).fill(null).map((_, index) => (
         <div key={index} className={styles.full__page} style={{ height: '100vh' }}>
