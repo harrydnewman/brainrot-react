@@ -20,6 +20,21 @@ export default function ScrollHolder() {
     hardResetScroll();
 };
 
+const scrollToNextPage = () => {
+  console.log("scrollToNextPage")
+  if (containerRef.current) {
+    const nextScrollPosition = (containerRef.current.scrollTop + window.innerHeight) * 3;
+    containerRef.current.scrollTo({
+      top: nextScrollPosition,
+      behavior: 'smooth',
+    });
+  }
+  else {
+    console.log("error");
+  }
+};
+
+
 useEffect(() => {
   // Fetch a new video when the page is first loaded
   fetchNewVideo();
@@ -29,7 +44,7 @@ useEffect(() => {
   const { scrollYProgress } = useScroll({
     container: containerRef,
     onChange: ({ value: { scrollYProgress } }) => {
-      // console.log("scrollyprogress: ", scrollYProgress);
+      console.log("scrollyprogress: ", scrollYProgress);
       if (scrollYProgress === 1) {
         console.log("scrollyprogress = 1");
         setTimer(setTimeout(() => {
@@ -94,7 +109,7 @@ useEffect(() => {
         </div>
       ))}
       <div className={styles.overlay}>
-        <Scroll scrollYProgress={scrollYProgress} videoData={videoData}/>
+        <Scroll scrollYProgress={scrollYProgress} videoData={videoData} onVideoEnd={scrollToNextPage}/>
       </div>
     </div>
   );

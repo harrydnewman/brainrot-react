@@ -2,7 +2,7 @@ import { useSpring, animated } from '@react-spring/web'
 import styles from '../styles/SquareForTesting.module.css';
 import React, { useState, useEffect } from 'react';
 
-export default function SquareForTesting({ scrollYProgress, videoData }) {
+export default function SquareForTesting({ scrollYProgress, videoData, onVideoEnd }) {
     const [playerHeight, setPlayerHeight] = useState(0);
     const [playerWidth, setPlayerWidth] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
@@ -100,7 +100,7 @@ export default function SquareForTesting({ scrollYProgress, videoData }) {
                             backgroundColor: x.to(x => `hsl(0, 0%, ${70 - x * 30}%)`) // Tie x to background color animation
                         }}
                     ></animated.div>
-                    <video controls autoPlay src={videoData.videoSrc}></video>
+                    <video controls autoPlay src={videoData.videoSrc} onEnded={onVideoEnd}></video>
                 </div>
             </div>
         );

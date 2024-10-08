@@ -6,7 +6,7 @@
     height: 250px;
     margin: 0 auto;
     overflow: hidden; */
-    background-color: brown;
+    background-color: black;
     border: 3px solid black;
     border-radius: 15px;
     display: flex;
@@ -33,5 +33,9 @@
     height: 0px; /* Start at 0 pixels */
     /* background-color: blue; */
     background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .outerSquare video {
+    width: 100%;
   }
   

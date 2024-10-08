@@ -6,7 +6,7 @@ import ScrollSource from '../components/ScrollSource';
 
 import SquareForTesting from '../components/SquareForTesting';
 
-const Scroll = ({scrollYProgress, videoData}) => {
+const Scroll = ({scrollYProgress, videoData, onVideoEnd}) => {
     
     const [screenHeight, setScreenHeight] = useState(0);
     const [screenWidth, setScreenWidth] = useState(0);
@@ -63,7 +63,7 @@ const Scroll = ({scrollYProgress, videoData}) => {
                 <div className={styles.leftFlex}>
                     <div className={styles.leftScrollContainer}>
                         {/* <LeftScroll videoData={videoData}/> */}
-                        <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData}/>
+                        <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData} onVideoEnd={onVideoEnd}/>
                         {/* <SquareForTesting scrollYProgress={scrollYProgress}/> */}
                     </div>
                     <div className={styles.sourceScrollContainer}>
