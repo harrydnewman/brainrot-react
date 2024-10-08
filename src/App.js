@@ -6,8 +6,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import SingleVideo from './pages/SingleVideo';
-import Scroll from './pages/Scroll';
 import ScrollHolder from './pages/ScrollHolder';
+import NavbarTesting from './pages/NavbarTesting';
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
          <Route path='/single' element={<SingleVideo/>}/>
          {/* <Route path='/scroll' element={<Scroll/>}/> */}
          <Route path='/scroll' element={<ScrollHolder/>}/>
+         <Route path='/navbarTesting' element={<NavbarTesting/>}/>
        </Routes>
      </div>
     </div>

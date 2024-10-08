@@ -36,7 +36,7 @@
 }
 
 .rightScrollContainer {
-    height: 70%;
+    height: 85%;
     pointer-events: none;
 }
 
@@ -52,13 +52,13 @@
 }
 
 .mobileRightScrollContainer {
-    height: 38vh;
+    height: 41vh;
 }
 
 
 
 .mobileSourceScrollContainer {
-    height: 7vh;
+    height: 4vh;
 }
 
 @media screen and (max-width: 700px) {
@@ -76,5 +76,21 @@
     }
     .rightFlex {
         width: 45%;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .mobileLeftScrollContainer {
+        height: 40vh;
+    }
+    
+    .mobileRightScrollContainer {
+        height: 56vh;
+    }
+    
+    
+    
+    .mobileSourceScrollContainer {
+        height: 4vh;
     }
   }

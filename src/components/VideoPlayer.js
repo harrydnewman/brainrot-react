@@ -35,8 +35,11 @@ export default function VideoPlayer({ scrollYProgress, videoData, onVideoEnd }) 
 
     // Update video player size based on window width/height
     function updateVideoPlayer(width, height) {
-        if (width > 300 && width < 625) {
+        if (width > 350 && width < 625) {
             maxWidth = 200;
+        }
+        else if (width < 350){
+            maxWidth = 175;
         }
         let adjustedWidth = Math.floor(width * 0.8);
         if (width < 625) {
@@ -68,7 +71,7 @@ export default function VideoPlayer({ scrollYProgress, videoData, onVideoEnd }) 
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, []);
+    });
 
     // Trigger animation when scrollYProgress reaches 1
     useEffect(() => {

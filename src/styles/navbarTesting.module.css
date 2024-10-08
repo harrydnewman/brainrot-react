@@ -1,0 +1,8 @@
+.mainDiv {
+    height: 100vh;
+    width: 100%;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

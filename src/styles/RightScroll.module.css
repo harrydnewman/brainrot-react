@@ -14,3 +14,16 @@
 .rightScrollContainer a, h1, p {
 pointer-events: auto;
 }
+
+@media screen and (max-width: 600px) {
+    h1 {
+        padding: 0;
+        margin: 0;
+        font-size: 25px;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+    }
+  }
+

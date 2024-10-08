@@ -1,4 +1,12 @@
-/* SquareForTesting.module.css */
+.playerDiv {
+    height: 100%;
+    width: 100%;
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 .outerSquare {
     position: relative;
     /* background-color: mediumpurple;
@@ -14,15 +22,7 @@
     pointer-events: auto;
   }
 
-  .playerDiv {
-    height: 100%;
-    width: 100%;
-    background-color: blanchedalmond;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-}
+  
   
   .innerSquare {
     position: absolute;
@@ -37,5 +37,11 @@
 
   .outerSquare video {
     width: 100%;
+  }
+
+  @media screen and (min-width: 350px) {
+    .playerDiv {
+        justify-content: flex-end;
+    }
   }
   
