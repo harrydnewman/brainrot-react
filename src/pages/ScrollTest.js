@@ -6,7 +6,7 @@ import Scroll from './Scroll';
 
 const PAGE_COUNT = 3;
 
-export default function Home() {
+export default function ScrollTest() {
   const [timer, setTimer] = useState(null); // Remove TypeScript-specific type
   const containerRef = useRef(null); // Remove TypeScript-specific type
 
@@ -19,9 +19,7 @@ export default function Home() {
         setTimer(setTimeout(() => {
           console.log("Running load next page");
         }, 1500));
-      } else {
-        console.log("Scroll progress not at the bottom.");
-      }
+      } 
     },
   });
 
@@ -70,7 +68,7 @@ export default function Home() {
         </div>
       ))}
       <div className={styles.overlay}>
-        <Scroll />
+        <Scroll scrollYProgress={scrollYProgress} />
       </div>
     </div>
   );

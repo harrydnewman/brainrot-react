@@ -4,8 +4,9 @@ import LeftScroll from '../components/LeftScroll';
 import RightScroll from '../components/RightScroll';
 import ScrollSource from '../components/ScrollSource';
 import fetchIndividualVideo from '../api/fetchIndividualVideo';
+import SquareForTesting from '../components/SquareForTesting';
 
-const Scroll = () => {
+const Scroll = ({scrollYProgress}) => {
     const [videoData, setVideoData] = useState(null);
     const [screenHeight, setScreenHeight] = useState(0);
     const [screenWidth, setScreenWidth] = useState(0);
@@ -49,7 +50,8 @@ const Scroll = () => {
         return (
             <div className={styles.mobileScrollContainer}>
                 <div className={styles.mobileLeftScrollContainer}>
-                <LeftScroll videoData={videoData}/>
+                {/* <LeftScroll videoData={videoData}/> */}
+                <SquareForTesting scrollYProgress={scrollYProgress}/>
                 </div>
                 <div className={styles.mobileRightScrollContainer}>
                     <RightScroll videoData={videoData} />
@@ -64,7 +66,8 @@ const Scroll = () => {
             <div className={styles.flexScrollContainer}>
                 <div className={styles.leftFlex}>
                     <div className={styles.leftScrollContainer}>
-                        <LeftScroll videoData={videoData}/>
+                        {/* <LeftScroll videoData={videoData}/> */}
+                        <SquareForTesting scrollYProgress={scrollYProgress}/>
                     </div>
                     <div className={styles.sourceScrollContainer}>
                         <ScrollSource videoData={videoData} screenHeight={screenHeight} screenWidth={screenWidth} />

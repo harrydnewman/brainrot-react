@@ -1,0 +1,17 @@
+.outerSquare {
+    position: relative;
+    background-color: mediumpurple;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  
+  .innerSquare {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    transition: height 0.3s ease;
+  }
+  

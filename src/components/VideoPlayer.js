@@ -46,7 +46,7 @@ export default function VideoPlayer({videoData}) {
     }, []);
 
     if(videoData){
-         console.log(videoData);
+        //  console.log(videoData);
         return (
             <div className={styles.playerDiv}>
                 <div

@@ -27,14 +27,17 @@
 .leftScrollContainer {
     height: 80%;
 
+
 }
 
 .sourceScrollContainer {
     height: 5%;
+    pointer-events: none;
 }
 
 .rightScrollContainer {
     height: 70%;
+    pointer-events: none;
 }
 
 
