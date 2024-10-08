@@ -30,7 +30,7 @@
 }
 
 .sourceScrollContainer {
-    height: 10%;
+    height: 5%;
 }
 
 .rightScrollContainer {
@@ -45,17 +45,17 @@
 } 
 
 .mobileLeftScrollContainer {
-    height: 60vh;
+    height: 50vh;
 }
 
 .mobileRightScrollContainer {
-    height: 35vh;
+    height: 43vh;
 }
 
 
 
 .mobileSourceScrollContainer {
-    height: 5vh;
+    height: 7vh;
 }
 
 @media screen and (max-width: 700px) {

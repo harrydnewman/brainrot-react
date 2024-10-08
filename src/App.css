@@ -31,16 +31,14 @@ li {
 }
 
 a {
-  color: white;
-  text-decoration: none;
-  /* padding: 0.5rem 1rem; */
-  font-size: 1.2rem;
+  /* color: white;
+  text-decoration: none; */
+  /* padding: 0.5rem 1rem;  */
+  /* font-size: 1.2rem;
+   */
+   color: blue;
 }
 
-a:hover {
-  background-color: #555;
-  border-radius: 5px;
-}
 .homePageContainer {
     height: 100vh;
 }
