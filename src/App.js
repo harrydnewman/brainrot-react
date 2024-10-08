@@ -7,6 +7,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import SingleVideo from './pages/SingleVideo';
 import Scroll from './pages/Scroll';
+import ScrollTest from './pages/ScrollTest';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
          
          <Route path='/single' element={<SingleVideo/>}/>
          <Route path='/scroll' element={<Scroll/>}/>
+         <Route path='/scrolltest' element={<ScrollTest/>}/>
        </Routes>
      </div>
     </div>
