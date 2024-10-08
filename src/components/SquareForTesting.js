@@ -1,13 +1,15 @@
-import { useSpring, animated } from '@react-spring/web';
+import { animated } from '@react-spring/web';
 import styles from '../styles/SquareForTesting.module.css';
 
 export default function SquareForTesting({ scrollYProgress }) {
-    console.log(scrollYProgress)
-  // Animate the height based on scroll progress
-  const innerSquareStyle = useSpring({
-    height: scrollYProgress.to((val) => `${val * 100}%`),
-    backgroundColor: 'mediumpurple',
-  });
+  // The outer square height in pixels
+  const outerSquareHeight = 250; // Match this to your CSS
+
+  // Use scrollYProgress to calculate the height in pixels
+  const innerSquareStyle = {
+    height: scrollYProgress.to((val) => `${val * outerSquareHeight}px`),
+    backgroundColor: 'blue',
+  };
 
   return (
     <div className={styles.outerSquare}>
