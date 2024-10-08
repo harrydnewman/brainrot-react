@@ -3,19 +3,15 @@ import styles from '../styles/Scroll.module.css';
 import LeftScroll from '../components/LeftScroll';
 import RightScroll from '../components/RightScroll';
 import ScrollSource from '../components/ScrollSource';
-import fetchIndividualVideo from '../api/fetchIndividualVideo';
+
 import SquareForTesting from '../components/SquareForTesting';
 
-const Scroll = ({scrollYProgress}) => {
-    const [videoData, setVideoData] = useState(null);
+const Scroll = ({scrollYProgress, videoData}) => {
+    
     const [screenHeight, setScreenHeight] = useState(0);
     const [screenWidth, setScreenWidth] = useState(0);
 
-    const fetchNewVideo = async () => {
-        const data = await fetchIndividualVideo();
-        setVideoData(data);
-    };
-
+   
     const [windowSize, setWindowSize] = useState({
         width: window.innerWidth,
         height: window.innerHeight,
@@ -36,7 +32,7 @@ const Scroll = ({scrollYProgress}) => {
         window.addEventListener('resize', handleResize);
 
         // Log initial screen size
-        fetchNewVideo();
+        
         setScreenHeight(window.innerHeight);
         setScreenWidth(window.innerWidth);
 
@@ -51,7 +47,7 @@ const Scroll = ({scrollYProgress}) => {
             <div className={styles.mobileScrollContainer}>
                 <div className={styles.mobileLeftScrollContainer}>
                 {/* <LeftScroll videoData={videoData}/> */}
-                <SquareForTesting scrollYProgress={scrollYProgress}/>
+                <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData}/>
                 </div>
                 <div className={styles.mobileRightScrollContainer}>
                     <RightScroll videoData={videoData} />
@@ -67,7 +63,8 @@ const Scroll = ({scrollYProgress}) => {
                 <div className={styles.leftFlex}>
                     <div className={styles.leftScrollContainer}>
                         {/* <LeftScroll videoData={videoData}/> */}
-                        <SquareForTesting scrollYProgress={scrollYProgress}/>
+                        <SquareForTesting scrollYProgress={scrollYProgress} videoData={videoData}/>
+                        {/* <SquareForTesting scrollYProgress={scrollYProgress}/> */}
                     </div>
                     <div className={styles.sourceScrollContainer}>
                         <ScrollSource videoData={videoData} screenHeight={screenHeight} screenWidth={screenWidth} />
