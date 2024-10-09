@@ -1,9 +1,10 @@
 import styles from '../styles/Grid.module.css'
+import GridItem from '../components/GridItem'
 
 export default function Grid(){
     return (
         <div className={styles.mainDiv}>
-            <p>GRID</p>
+            <GridItem />
         </div>
     )
 }
