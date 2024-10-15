@@ -20,7 +20,7 @@ const InnerSquareAnimation = React.forwardRef((props, ref) => {
       ref={ref}
       style={{
         backgroundImage: backgroundImage,
-        backgroundSize: 'cover',
+        backgroundSize: 'cover', 
         backgroundPosition: 'center',
       }}
     >
